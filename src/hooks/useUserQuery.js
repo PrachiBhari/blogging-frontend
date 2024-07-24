@@ -1,11 +1,13 @@
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
-import axios from 'axios';
+import axios from "axios";
 
 const getCurrentUser = async () => {
-  const {data} = await axios.get(`http://localhost:3001/api/user`);
+  const { data } = await axios.get(
+    `https://blogging-backend-j5o3.onrender.com/api/user`
+  );
 
-//   console.log("getCurrentUser", { data });
+  //   console.log("getCurrentUser", { data });
 
   return data;
 };

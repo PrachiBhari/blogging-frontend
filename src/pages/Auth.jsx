@@ -16,10 +16,11 @@ function Auth() {
       // api request to login or register
 
       const { data } = await axios.post(
-        `http://localhost:3001/api/users${isRegister ? "" : "/login"}`,
+        `https://blogging-backend-j5o3.onrender.com/api/users${
+          isRegister ? "" : "/login"
+        }`,
         { user: values }
       );
-
 
       //navigate the user back to home page
       login(data.user);
@@ -27,9 +28,9 @@ function Auth() {
     } catch (error) {
       console.error("Error while onSubmit: ", error);
 
-      const {status, data} = error.response;
+      const { status, data } = error.response;
 
-      if(status === 422){
+      if (status === 422) {
         actions.setErrors(data.errors);
       }
     }
